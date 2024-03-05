@@ -1,0 +1,974 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/Nao.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/balls/protos/Ball.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/sphero/bb8/protos/BB-8.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/kinematics/tinkerbots/protos/TinkerbotsCube.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/samples/contests/tower_of_hanoi/protos/YoubotFlag.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/epfl/biorob/protos/GhostDog.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.24101374881279844 -0.318580285660178 0.9167436798101641 4.9849594862138815
+  position -7.002733654680686 16.14311487101689 8.989737137143415
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 -0.01 0
+  floorSize 10 10
+  floorTileSize 10 0
+  floorAppearance Parquetry {
+    type "light strip"
+    colorOverride 0.2 1 0.2
+  }
+  wallHeight 0.5
+  wallAppearance BrushedAluminium {
+    IBLStrength 5
+  }
+}
+DEF Tree1 Transform {
+  translation -2.19 -2.98 0.029978
+  rotation 1.5320499999928083e-06 -2.6535899999875436e-06 0.9999999999953058 2.0944
+  scale 0.01 0.01 0.01
+  children [
+    CadShape {
+      url [
+        "../../webots world models/57-lowpoly-tree-v1/LowPoly Tree v1/LowPoly_Tree_v1.obj"
+      ]
+    }
+  ]
+}
+DEF Tree2 Transform {
+  translation 4.05 4.08312 0.0300148
+  rotation -6.713739999976363e-13 -2.6535899999906573e-06 0.9999999999964793 -3.1415853071795863
+  scale 0.01 0.01 0.01
+  children [
+    CadShape {
+      url [
+        "../../webots world models/57-lowpoly-tree-v1/LowPoly Tree v1/LowPoly_Tree_v1.obj"
+      ]
+    }
+  ]
+}
+DEF Large_Tree Solid {
+  translation 0.95 -3.33 0
+  children [
+    Solid {
+      translation 0 0 2.5
+      name "UpperLeaves"
+      boundingObject Box {
+        size 3 3.2 1.3
+      }
+    }
+    Solid {
+      translation -0.78 0.49 1.73
+      name "LowerLeaves"
+      boundingObject Box {
+        size 1.7 1.5 0.7
+      }
+    }
+    Solid {
+      translation -0.409474 0.279774 0.975255
+      rotation -0.2194918371076049 -0.8191627558766797 -0.5299016067419042 0.6745203061004253
+      name "Branch"
+      boundingObject Cylinder {
+        height 1.2
+        radius 0.07
+      }
+    }
+    Solid {
+      translation 0 0 1
+      name "Trunk"
+      boundingObject Cylinder {
+        radius 0.2
+      }
+    }
+    Transform {
+      translation 0.01 -1.91786e-10 -1.01822e-15
+      rotation -0.9999934699443532 -9.589734506671008e-09 0.0036138716983296877 -5.307179586466759e-06
+      scale 0.015 0.015 0.015
+      children [
+        CadShape {
+          url [
+            "../../webots world models/57-lowpoly-tree-v1/LowPoly Tree v1/LowPoly_Tree_v1.obj"
+          ]
+        }
+      ]
+    }
+  ]
+  name "solid(1)"
+}
+Robot {
+  name "supervisor"
+  controller "supervisor_controller"
+  supervisor TRUE
+}
+DEF Barn Solid {
+  translation 3.83 -3.07 0
+  children [
+    Solid {
+      translation 0 -0.08 0.55
+      boundingObject Box {
+        size 1.4 2 1.1
+      }
+    }
+    DEF Barn Transform {
+      translation -0.75 -0.61 -0.12
+      scale 0.2 0.2 0.2
+      children [
+        CadShape {
+          url [
+            "../../webots world models/Barn/20955_Barn_v2_NEW.obj"
+          ]
+        }
+      ]
+    }
+  ]
+}
+DEF BB-8 BB-8 {
+  translation -4.13 0 0
+}
+DEF SetOfDots Pose {
+  children [
+    DEF dot0 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot1 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot2 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot3 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot4 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot5 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot6 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot7 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot8 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot9 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot10 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot11 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot12 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot13 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot14 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot15 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot16 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot17 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot18 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot19 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot20 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot21 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot22 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot23 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot24 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot25 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot26 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot27 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot28 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot29 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot30 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot31 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot32 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot33 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot34 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot35 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+    DEF dot36 Transform {
+      translation -6.14 -3.62 0.38
+      scale 0.5 0.5 0.5
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.8 0 0.0117647
+              shininess 0
+              transparency 0.2
+            }
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+  ]
+}
+DEF Cows Group {
+  children [
+    DEF Cow5 Solid {
+      translation -6.19 0 0
+      children [
+        Solid {
+          translation 0.07 0 0.15
+          boundingObject Box {
+            size 0.5 0.2 0.3
+          }
+        }
+        Transform {
+          scale 0.03 0.03 0.03
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "../../webots world models/lowpolycow/cow.png"
+                  ]
+                }
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "../../webots world models/lowpolycow/cow.dae"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+      name "solid(5)"
+    }
+    DEF Cow4 Solid {
+      translation -6.19 0 0
+      children [
+        Solid {
+          translation 0.07 0 0.15
+          boundingObject Box {
+            size 0.5 0.2 0.3
+          }
+        }
+        Transform {
+          scale 0.03 0.03 0.03
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "../../webots world models/lowpolycow/cow.png"
+                  ]
+                }
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "../../webots world models/lowpolycow/cow.dae"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+      name "solid(4)"
+    }
+    DEF Cow3 Solid {
+      translation -6.19 0 0
+      children [
+        Solid {
+          translation 0.07 0 0.15
+          boundingObject Box {
+            size 0.5 0.2 0.3
+          }
+        }
+        Transform {
+          scale 0.03 0.03 0.03
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "../../webots world models/lowpolycow/cow.png"
+                  ]
+                }
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "../../webots world models/lowpolycow/cow.dae"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+      name "solid(3)"
+    }
+    DEF Cow2 Solid {
+      translation -6.19 0 0
+      children [
+        Solid {
+          translation 0.07 0 0.15
+          boundingObject Box {
+            size 0.5 0.2 0.3
+          }
+        }
+        Transform {
+          scale 0.03 0.03 0.03
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "../../webots world models/lowpolycow/cow.png"
+                  ]
+                }
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "../../webots world models/lowpolycow/cow.dae"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+      name "solid(2)"
+    }
+    DEF Cow1 Solid {
+      translation -6.19 0 0
+      rotation 0 0 -1 -5.307179586466759e-06
+      children [
+        Solid {
+          translation 0.07 0 0.15
+          boundingObject Box {
+            size 0.5 0.2 0.3
+          }
+        }
+        Transform {
+          scale 0.03 0.03 0.03
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "../../webots world models/lowpolycow/cow.png"
+                  ]
+                }
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "../../webots world models/lowpolycow/cow.dae"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+      name "solid(6)"
+    }
+  ]
+}

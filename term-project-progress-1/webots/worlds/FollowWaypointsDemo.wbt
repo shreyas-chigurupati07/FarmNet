@@ -1,0 +1,3669 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/bitcraze/crazyflie/protos/Crazyflie.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/softbank/nao/protos/Nao.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/balls/protos/Ball.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/kinematics/tinkerbots/protos/TinkerbotsCube.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/samples/contests/tower_of_hanoi/protos/YoubotFlag.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/epfl/biorob/protos/GhostDog.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.22304607100229046 -0.4179459700787699 0.8806654394861634 5.284232210545803
+  position -2.1628714760463565 3.357138838959909 2.2785297824361335
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF farmland RectangleArena {
+  translation 0 -0.01 0
+  floorSize 10 10
+  floorTileSize 10 0
+  floorAppearance Parquetry {
+    type "light strip"
+    colorOverride 0.2 1 0.2
+  }
+  wallHeight 0.5
+  wallAppearance BrushedAluminium {
+    IBLStrength 5
+  }
+}
+DEF Tree1 Transform {
+  translation -2.19 -2.98 0.029978
+  rotation 1.5320499999928083e-06 -2.6535899999875436e-06 0.9999999999953058 2.0944
+  scale 0.01 0.01 0.01
+  children [
+    CadShape {
+      url [
+        "../../webots world models/57-lowpoly-tree-v1/LowPoly Tree v1/LowPoly_Tree_v1.obj"
+      ]
+    }
+  ]
+}
+DEF Tree2 Transform {
+  translation 4.05 4.08312 0.0300148
+  rotation -6.713739999976363e-13 -2.6535899999906573e-06 0.9999999999964793 -3.1415853071795863
+  scale 0.01 0.01 0.01
+  children [
+    CadShape {
+      url [
+        "../../webots world models/57-lowpoly-tree-v1/LowPoly Tree v1/LowPoly_Tree_v1.obj"
+      ]
+    }
+  ]
+}
+DEF Large_Tree Solid {
+  translation 0.49 -0.02 0
+  children [
+    Solid {
+      translation 0 0 2.5
+      name "UpperLeaves"
+      boundingObject Box {
+        size 3 3.2 1.3
+      }
+    }
+    Solid {
+      translation -0.78 0.49 1.73
+      name "LowerLeaves"
+      boundingObject Box {
+        size 1.7 1.5 0.7
+      }
+    }
+    Solid {
+      translation -0.409474 0.279774 0.975255
+      rotation -0.2194918371076049 -0.8191627558766797 -0.5299016067419042 0.6745203061004253
+      name "Branch"
+      boundingObject Cylinder {
+        height 1.2
+        radius 0.07
+      }
+    }
+    Solid {
+      translation 0 0 1
+      name "Trunk"
+      boundingObject Cylinder {
+        radius 0.2
+      }
+    }
+    Transform {
+      translation 0.01 -1.91786e-10 -1.01822e-15
+      rotation -0.9999934699443532 -9.589734506671008e-09 0.0036138716983296877 -5.307179586466759e-06
+      scale 0.015 0.015 0.015
+      children [
+        CadShape {
+          url [
+            "../../webots world models/57-lowpoly-tree-v1/LowPoly Tree v1/LowPoly_Tree_v1.obj"
+          ]
+        }
+      ]
+    }
+  ]
+  name "solid(1)"
+}
+DEF Barn Solid {
+  translation 3.83 -3.07 0
+  children [
+    Solid {
+      translation 0 -0.08 0.55
+      boundingObject Box {
+        size 1.4 2 1.1
+      }
+    }
+    DEF Barn Transform {
+      translation -0.75 -0.61 -0.12
+      scale 0.2 0.2 0.2
+      children [
+        CadShape {
+          url [
+            "../../webots world models/Barn/20955_Barn_v2_NEW.obj"
+          ]
+        }
+      ]
+    }
+  ]
+}
+DEF Cow1 Solid {
+  translation 0.41 0.45 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  children [
+    Transform {
+      scale 0.03 0.03 0.03
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../../webots world models/lowpolycow/cow.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "../../webots world models/lowpolycow/cow.dae"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+  name "solid(6)"
+}
+DEF Cow2 Solid {
+  translation 0.41 -0.45 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  children [
+    Transform {
+      scale 0.03 0.03 0.03
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../../webots world models/lowpolycow/cow.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "../../webots world models/lowpolycow/cow.dae"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+  name "solid(6)"
+}
+DEF drone Crazyflie {
+  translation 0.011218105551165342 0.007139128758338257 0.01498038023269954
+  rotation -1.8759277236432827e-07 1.5631630897152433e-07 0.9999999999999704 0.0034708280294788226
+  controller "test_controller"
+  supervisor TRUE
+}
+DEF PathDots Group {
+  children [
+    DEF Dot Transform {
+      translation 3.720306965983002e-05 -3.526810959996392e-05 0.014779358834989365
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.040000000000000036 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 1.669496810272443e-05 -1.4758978722225724e-05 0.014960305800888094
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.08000000000000007 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 1.4491156161736119e-05 -1.2555220658147015e-05 0.014981958584511746
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.1200000000000001 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 1.4254411154943631e-05 -1.2318512393293186e-05 0.014987568597025198
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.16000000000000014 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 1.422897817861626e-05 -1.2293088115829307e-05 0.014992509513460582
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.20000000000000018 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 1.4235390211798937e-05 -1.2299423498537862e-05 0.014997473897887801
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.2400000000000002 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 1.411876006612284e-05 -1.21370274513325e-05 0.025823467200967048
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.28000000000000025 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 7.6206861357782665e-06 -7.668455108227146e-06 0.05276759702770831
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.31999999999999984 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation -4.001245368852039e-06 9.89740172133213e-07 0.07591031818777325
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.3599999999999999 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.00023368388320363367 0.0065419469443094465 0.09187368458560952
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.3999999999999999 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.0005020717995070868 0.02360769883266174 0.10226965562369474
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.43999999999999995 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.000516489215234836 0.04453490534213278 0.10787222263175414
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.48 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.00038754431738943117 0.06537832198939567 0.12302688457716639
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.52 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.0002407194112255846 0.0828253649632161 0.156127353470446
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.56 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.00011474911598086605 0.09625008969327724 0.19928261111832452
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.6000000000000001 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 2.764464849928852e-05 0.10479282305027228 0.242327466950863
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.6400000000000001 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation -1.527931156413599e-05 0.10956495331546734 0.290227995948663
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.6800000000000002 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.004282389232192653 0.11117038305333785 0.33266724749970766
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.7199999999999998 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.02846187083360479 0.11067239372052536 0.36131476753047426
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.7599999999999998 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.05366397710895229 0.10893937496991964 0.3786935736295845
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.7999999999999998 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.08564260572050747 0.10671526174228463 0.3873690692527208
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.8399999999999999 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.1255168992966667 0.1044547311125037 0.39142323595598816
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.8799999999999999 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.15733996762174432 0.10256091973532122 0.39224514427006046
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.9199999999999999 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.1930144681464761 0.11041979575834734 0.3907697039076526
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.9600000000000004 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.2322655517327038 0.12783716911121712 0.38814065528383657
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.2615855122830351 0.1484045878507931 0.3853001829458286
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.9600000000000004 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.2886191605999745 0.1734541205227617 0.38211937518535577
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.9200000000000008 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.3257162804950332 0.20649675867102657 0.378950714558973
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8799999999999999 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.3565483656889049 0.239792465333906 0.37622045976686075
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8400000000000001 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.37726153382058725 0.26872800063648655 0.38336819410655654
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8000000000000003 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.38985778412321 0.29109147874730174 0.41159231670162083
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.7600000000000005 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.39667799282004235 0.3169974677902115 0.43858534483208467
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.7199999999999995 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.3994582256391769 0.34297875014429124 0.4539327175603987
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6799999999999999 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4008988401948465 0.36762619862531454 0.470771119971272
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6400000000000001 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.403648751035986 0.39376610532982614 0.4934055993857456
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6000000000000003 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.40637524873430114 0.4176764332788642 0.5102681384700315
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5600000000000005 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4083401452699386 0.4366463111354374 0.520058311797918
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5199999999999996 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.40961786893047725 0.4502857916096738 0.525828176851185
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.48000000000000087 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41036490589812163 0.4587799214851284 0.52790626053501
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.43999999999999995 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4107590313492374 0.4629859954090917 0.5281720924131086
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.40000000000000036 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109387658814144 0.46395227944472534 0.5271953004679654
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.35999999999999943 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41099935528079945 0.4627689650390199 0.52535922987658
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.32000000000000073 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41100737306267854 0.4604283843115795 0.5233009201758694
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.2800000000000009 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41099734100632374 0.4577441939580385 0.5211275009355003
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.24 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109799890791263 0.45525354813717767 0.5192207430150371
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.2000000000000004 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41096848733707186 0.45320117877705535 0.5172662057373948
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1600000000000006 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41096247814189496 0.45167410443230316 0.5156596188998993
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12000000000000077 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109605119496236 0.4506813306340627 0.5138344176448295
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.07999999999999985 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109589221841204 0.45014619095646663 0.5124025776037947
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.04000000000000026 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109569642370183 0.44995988632416645 0.5110506246430618
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 2.220446049250313e-16 1 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41095551768078986 0.4500057603085307 0.5094781415124975
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.040000000000000036
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41095664348626354 0.4501920247412507 0.5084018291608814
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.08000000000000007
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109535434112612 0.45043000768984964 0.5080922475688618
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.1200000000000001
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109508658152513 0.4506737250001854 0.5070189325268543
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.16000000000000014
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41095043105819434 0.450885506000179 0.5059342752993605
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.20000000000000018
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109593646680083 0.45104717136721456 0.5050918102500703
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.2400000000000002
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109609334911268 0.45115812468742744 0.5043153229406954
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.28000000000000025
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.410963139204298 0.4512212425618446 0.5034564573028136
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.31999999999999984
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.410963399833035 0.4512439290390655 0.503362985164315
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.3599999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.410958383072121 0.4512392845388874 0.5029497727079568
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.3999999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41095069851233973 0.45121842611287116 0.5025381497413253
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.43999999999999995
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109500779257574 0.451192908420228 0.50179435180018
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.48
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109489948444008 0.45116927833904696 0.5014865983239974
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.52
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109514102094609 0.45114781211287325 0.5020637663985941
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.56
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109453109196747 0.4511287020988569 0.5020250275408129
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.6000000000000001
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41094354100542924 0.45111497283219876 0.5015123910040333
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.6400000000000001
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.410942244380104 0.4511070724673659 0.5015065763754019
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.6800000000000002
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41093443533074253 0.4511022763932186 0.501012690532642
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.7200000000000006
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109362243681114 0.4511033357250738 0.500527662785915
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.7600000000000002
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109379426817498 0.4511077945679605 0.5005608087615891
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.7999999999999998
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109330588393633 0.45111006927300706 0.49981680348305807
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.8399999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41093643483061404 0.45111416914706687 0.49960337137891636
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.8799999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109404794911661 0.45111797604012155 0.49982237100873167
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.9199999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41093642981136724 0.4511176348856923 0.5004724413197404
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0.9600000000000004
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41093168044814576 0.4511184343823473 0.5006210546456645
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109314063127248 0.4511177102988286 0.5006478064122115
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.9600000000000009 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41093643246144285 0.45111281403339554 0.5006865561376606
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.9199999999999999 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109361416429962 0.4511101723287497 0.5009210131591085
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.8799999999999999 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41092812228255443 0.4511058504747969 0.5006307966325073
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.8399999999999999 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41092466296840346 0.45110317709055076 0.5004531826270341
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.8000000000000007 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109236528496889 0.4511020779969043 0.5005278327638814
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.7600000000000007 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109326663904887 0.4510983371324476 0.5004772730479083
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.7199999999999998 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109327985216799 0.451097703305918 0.500475224626985
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.6799999999999997 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.410925997147323 0.45110059750992115 0.5004095512109319
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.6400000000000015 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109214576881569 0.4511042335804774 0.5002970542922661
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.6000000000000005 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.410302083900083 0.4489883088762224 0.5002655326667519
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.5600000000000009 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.40778959526352565 0.4331991424945911 0.5001974988241685
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.5199999999999996 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.40540072503793545 0.40563845327557496 0.5001210052128856
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.48000000000000087 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4034982345147529 0.374117917284726 0.5001014611156653
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.43999999999999995 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4021537963343501 0.3446030424091289 0.5001509176955031
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.40000000000000036 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.38629550249906963 0.32203581339968085 0.500062726985321
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.35999999999999943 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.35917999497082187 0.30530345515172147 0.49990495889143555
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.32000000000000073 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.33260735176923606 0.2921103707195234 0.49978065921050197
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.2799999999999998 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.293860612879801 0.27254761726933285 0.49957740174425586
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.2400000000000002 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.2588927436441767 0.250906899098127 0.49970758910301827
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.1999999999999993 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.23380229058307728 0.22861376226523888 0.4998213904774823
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.1600000000000006 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.21758365142993355 0.19834362553515908 0.4999260102555322
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.12000000000000055 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20841864431339774 0.1664040195753757 0.5000711588881579
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.07999999999999963 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20302425775754684 0.13805621375562893 0.50029548826597
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.040000000000000036 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.1997705467830598 0.10522629766954233 0.5003512000060963
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 4.440892098500626e-16 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.19898781458559706 0.0706076858788618 0.5003125005659673
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.03999999999999826 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.19910343785441723 0.03940712309882376 0.5003392024166216
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.07999999999999918 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.19946821202317083 0.004681495890466469 0.5004131589437033
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1200000000000001 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.19982199468756895 -0.031020797127296877 0.5003266510811633
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.15999999999999992 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20007257569684248 -0.0630188131384158 0.5003005294006839
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.19999999999999862 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20023866067798202 -0.0994792922897453 0.500319588703016
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.23999999999999932 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20033277151310913 -0.13579350172843427 0.5004093209063907
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.28000000000000047 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20200811263128388 -0.1674456910677901 0.5002894607788925
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.32000000000000006 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.22343108451009994 -0.2035207876423176 0.49979277735297434
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.35999999999999877 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.2504113775662498 -0.2393792398543761 0.4998422608816116
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3999999999999997 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.27023611085426524 -0.2706893995304172 0.5005373155852008
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.4400000000000006 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.28398112153283667 -0.3066545895042672 0.5004498132074926
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.4800000000000002 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.29230409839660937 -0.3414760813921677 0.5002673333802605
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5199999999999991 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.3016026158439838 -0.37146578078237136 0.5001287899643814
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.56 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.3285395983792539 -0.39382001237280473 0.4998285736543838
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6000000000000008 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.3543231115032198 -0.4081316513185185 0.49954282953126655
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6400000000000006 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.37564390439498085 -0.41999820312010666 0.49957701164155527
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6799999999999993 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.39152020960966155 -0.43171151115809947 0.49953220029548007
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.7199999999999991 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4012566069161157 -0.4415626990637604 0.49966106091908236
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.76 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.40677360182772204 -0.4489542076837347 0.49972764247357077
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8000000000000009 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4096756920294433 -0.45388990576444993 0.499857366118006
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8399999999999992 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41075787463763436 -0.4564217067272118 0.5000520373258937
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8799999999999992 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41113664000298045 -0.45725143649838795 0.5003135011808157
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.9200000000000002 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4111935996317982 -0.456915218968348 0.5003673424723634
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.9600000000000011 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4111449964800921 -0.4559158019575238 0.5004497066819641
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.9999999999999998 0 1
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4110709608087258 -0.45466951761181235 0.5004180498198147
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.9600000000000009
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.411008024457624 -0.4534298703617162 0.5001563283398268
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.9199999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109724468979647 -0.4523864101573896 0.49967784430765055
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.8799999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41094775641390957 -0.4515781179042553 0.499659642948716
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.8399999999999999
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109333226711431 -0.4510436007860798 0.5000094954216947
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.8000000000000007
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109258309655413 -0.4507439995791225 0.5004310237568675
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.7600000000000007
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41092019975994565 -0.45062113863181863 0.5002672099511757
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.7199999999999998
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109139534981085 -0.4506220934898604 0.5001478268507857
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.6799999999999997
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41090629622785174 -0.45069680862897094 0.5000993277885607
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.6400000000000001
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41089926337956123 -0.4508077294006141 0.5001208983942348
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.6000000000000005
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41089453181380065 -0.45092614009496446 0.5002089106594274
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.5599999999999996
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41089511505185244 -0.4510330516468988 0.5003671747792939
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.5199999999999996
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41089664289392974 -0.4511168685162694 0.5003777287582857
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.48
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108996323241996 -0.4511744240794348 0.5004730616851567
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.43999999999999995
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109002002107512 -0.4512078997488397 0.5004199468879922
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.40000000000000036
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41090222284302225 -0.45122220622680886 0.5006176709708489
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.3600000000000003
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109056628977474 -0.4512222639277516 0.5005004582202046
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.32000000000000073
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109020221347488 -0.45121093660852607 0.5004699929910943
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.28000000000000114
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109006815797586 -0.4511962357713281 0.5004131560249211
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.2400000000000002
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109005758101114 -0.4511818405157226 0.5002755965038633
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.20000000000000018
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108981538489917 -0.4511711627098022 0.49984699053083176
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.1600000000000006
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108936136023776 -0.45115911106315804 0.49953490551000823
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.12000000000000055
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108968420073861 -0.4511522863280707 0.49959103274702504
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.07999999999999963
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41089773187211553 -0.45114742551158143 0.4996792507796625
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0.040000000000000036
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108985503317498 -0.4511473712265463 0.49954716170127855
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 4.440892098500626e-16
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109000910481993 -0.4511470454058837 0.49960201100443774
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4109008304863393 -0.4511477654242831 0.49957989733403435
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41089952939369817 -0.45114887602944154 0.4997480429683843
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108988012776593 -0.45114943998355966 0.4997142308783683
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108938631666598 -0.45114921849044787 0.49962804894799634
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108900905931655 -0.4511498221745948 0.4996396281124181
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108897852502468 -0.4511494822623383 0.49960715718135534
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41088907845904377 -0.4511485677771021 0.4996437587456677
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41089019234501667 -0.45114861537604256 0.49975052143135484
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108869113166568 -0.45114870390359435 0.4999258123028162
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108850063273334 -0.4511492380883461 0.5001725343589468
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41088229563115775 -0.4511488910419472 0.5004903247423432
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41088388677689586 -0.4511469791942851 0.5000594241317123
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108880734319794 -0.45114297761055405 0.4994260827987511
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4108879281323913 -0.45114117872008214 0.49941629408361476
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41088619375949914 -0.4511478102455063 0.49951900841935776
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.41035745553692254 -0.4497439831622518 0.499752429364534
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.40790892549732044 -0.4425525743223235 0.4782866468313623
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4053543158554275 -0.4324347472956654 0.44636853754454314
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.40339354283676315 -0.42183602313439017 0.4087135597496992
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4021357669110454 -0.4093119165441306 0.37741001319547346
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4014333321272858 -0.38721502309223726 0.3554506947138448
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.4010677824065181 -0.36175334912123475 0.34131523582869927
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.3991673018776931 -0.33741364454714534 0.3329841359889531
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.37776261985914594 -0.317514511508264 0.32878242505005106
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.35154079603610894 -0.3031478425881593 0.32752245277831826
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.32416784291131306 -0.2890581097796789 0.32768145050282665
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.28469456332539467 -0.26831238830331317 0.32875234093213407
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.2516437153536298 -0.24641982853248184 0.3300952460916003
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.22843792928092016 -0.22251007570492493 0.3215904245170353
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.2145959879210243 -0.19174000867147448 0.30734272017142145
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20649799884023304 -0.15971002431524575 0.2956545630950128
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.20104248905101696 -0.13295320406549704 0.28466069765411633
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.17754693929418114 -0.11171520603443598 0.26409097062833764
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.15123950380735185 -0.09745672442634616 0.24869075941098293
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.1306366551537513 -0.08922595355444336 0.221346551815637
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.11679855091746756 -0.0849214512366398 0.18347602441577437
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.1087921745012927 -0.07271676466620446 0.15488170549435856
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.10411684008539158 -0.05527135310802049 0.13627472364326565
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.09741655801761318 -0.03700498648394921 0.1256208739605364
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.07186883604091641 -0.020691001085411286 0.12007046596599673
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.045929639746484494 -0.007980894221477361 0.11807670500122136
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    DEF Dot Transform {
+      translation 0.02627891271317121 0.0008985483563060364 0.08442289329783638
+      scale 0.1 0.1 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+  ]
+}
