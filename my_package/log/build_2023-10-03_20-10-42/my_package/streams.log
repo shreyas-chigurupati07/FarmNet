@@ -1,0 +1,26 @@
+[2.039s] Invoking command in '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package': PYTHONPATH=/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/prefix_override:/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/my_package build --build-base /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/build install --record /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/install.log --single-version-externally-managed
+[3.028s] running egg_info
+[3.036s] writing build/my_package/my_package.egg-info/PKG-INFO
+[3.047s] writing dependency_links to build/my_package/my_package.egg-info/dependency_links.txt
+[3.056s] writing entry points to build/my_package/my_package.egg-info/entry_points.txt
+[3.064s] writing requirements to build/my_package/my_package.egg-info/requires.txt
+[3.068s] writing top-level names to build/my_package/my_package.egg-info/top_level.txt
+[3.120s] reading manifest file 'build/my_package/my_package.egg-info/SOURCES.txt'
+[3.188s] adding license file 'LICENSE'
+[3.224s] writing manifest file 'build/my_package/my_package.egg-info/SOURCES.txt'
+[3.229s] running build
+[3.231s] running build_py
+[3.290s] running install
+[3.291s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[3.293s]   warnings.warn(
+[3.294s] running install_lib
+[3.483s] running install_data
+[3.541s] copying launch/robot_launch.py -> /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/share/my_package/launch
+[3.642s] copying resource/my_robot.urdf -> /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/share/my_package/resource
+[3.683s] running install_egg_info
+[3.697s] removing '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages/my_package-0.0.0-py3.10.egg-info' (and everything under it)
+[3.775s] Copying build/my_package/my_package.egg-info to /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages/my_package-0.0.0-py3.10.egg-info
+[4.185s] running install_scripts
+[4.276s] Installing my_robot_driver script to /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/my_package
+[4.298s] writing list of installed files to '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/install.log'
+[4.319s] Invoked command in '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package' returned '0': PYTHONPATH=/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/prefix_override:/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/my_package build --build-base /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/build install --record /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/install.log --single-version-externally-managed

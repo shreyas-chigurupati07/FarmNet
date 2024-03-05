@@ -1,0 +1,29 @@
+[1.918s] Invoking command in '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package': PYTHONPATH=/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/prefix_override:/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/my_package build --build-base /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/build install --record /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/install.log --single-version-externally-managed
+[2.792s] running egg_info
+[2.799s] writing build/my_package/my_package.egg-info/PKG-INFO
+[2.808s] writing dependency_links to build/my_package/my_package.egg-info/dependency_links.txt
+[2.817s] writing entry points to build/my_package/my_package.egg-info/entry_points.txt
+[2.823s] writing requirements to build/my_package/my_package.egg-info/requires.txt
+[2.828s] writing top-level names to build/my_package/my_package.egg-info/top_level.txt
+[2.882s] reading manifest file 'build/my_package/my_package.egg-info/SOURCES.txt'
+[2.949s] adding license file 'LICENSE'
+[2.986s] writing manifest file 'build/my_package/my_package.egg-info/SOURCES.txt'
+[2.991s] running build
+[2.993s] running build_py
+[3.024s] copying my_package/obstacle_avoider.py -> /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/build/lib/my_package
+[3.060s] running install
+[3.061s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[3.062s]   warnings.warn(
+[3.064s] running install_lib
+[3.143s] copying /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/build/lib/my_package/obstacle_avoider.py -> /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages/my_package
+[3.233s] byte-compiling /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages/my_package/obstacle_avoider.py to obstacle_avoider.cpython-310.pyc
+[3.311s] running install_data
+[3.392s] copying resource/my_robot.urdf -> /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/share/my_package/resource
+[3.439s] running install_egg_info
+[3.453s] removing '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages/my_package-0.0.0-py3.10.egg-info' (and everything under it)
+[3.533s] Copying build/my_package/my_package.egg-info to /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages/my_package-0.0.0-py3.10.egg-info
+[3.861s] running install_scripts
+[3.943s] Installing my_robot_driver script to /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/my_package
+[3.959s] Installing obstacle_avoider script to /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/my_package
+[3.977s] writing list of installed files to '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/install.log'
+[3.996s] Invoked command in '/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package' returned '0': PYTHONPATH=/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/prefix_override:/mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/my_package build --build-base /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/build install --record /mnt/c/Users/xiaox/OneDrive/Desktop/linux stuff/my_package/build/my_package/install.log --single-version-externally-managed
