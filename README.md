@@ -1,5 +1,4 @@
-# FarmNet
-## Autonomous Navigation of Quadrotor Drones Using A* Algorithm
+# FarmNet - Autonomous Navigation of Quadrotor Drones Using A* Algorithm
 
 ## Project Overview
 This project explores the autonomous navigation of a Bitcraze Crazyflie-modeled quadrotor drone in a Webots-simulated environment. The drone autonomously traverses a complex virtual landscape, avoiding static obstacles to reach predefined goals.
